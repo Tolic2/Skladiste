@@ -14,4 +14,5 @@ void* sortirajCijenaMax(char*);
 void ispisiSortiranoMax(const ARTIKL* polje);
 void* sortirajCijenaMin(char*);
 void ispisiSortiranoMin(const ARTIKL* polje);
+int brisanjeDatoteke(char* fp);
 #endif
