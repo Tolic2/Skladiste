@@ -15,7 +15,8 @@ int izbornik(const char* const ime) {
 	printf("\t\tOpcija 4: Ispis svih artikala\n\n");
 	printf("\t\tOpcija 5: Pretrazivanje artikla po ID-u\n\n");
 	printf("\t\tOpcija 6: Brisanje artikla\n\n");
-	printf("\t\tOpcija 7: Zavrsetak programa\n\n");
+	printf("\t\tOpcija 7: Brisanje datoteke\n\n");
+	printf("\t\tOpcija 8: Zavrsetak programa\n\n");
 	printf("\t\t***************************************\n\n");
 
 	int opcija = 0;
@@ -97,8 +98,13 @@ int izbornik(const char* const ime) {
 
 		brisanjeArtikala(poljeArtikala, ime);
 		break;
-
+			
 	case 7:
+		brisanjeDatoteke("skladiste.bin");
+
+		break;
+
+	case 8:
 		opcija = izlaz(poljeArtikala);
 
 		break;
