@@ -276,6 +276,22 @@ void* pretrazivanje(ARTIKL* const polje) {
 	return NULL;
 }
 
+int brisanjeDatoteke(char* fp) {
+	
+	int status;
+	
+	status = remove("skladiste.bin");
+
+	if (status == 0) {
+		printf("Datoteka uspjesno obrisana\n");
+
+	}
+	else {
+		printf("Nije moguce obrisati datoteku\n");
+	}
+	return 0;
+}
+
 int izlaz(ARTIKL* polje) {
 
 	free(polje);
