@@ -1,7 +1,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 #include "datatype.h"
-
+//10
 int izbornik(const char* const);
 void inicijalizacija(const char* const);
 void dodajArtikl(const char* const);
