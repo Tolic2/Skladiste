@@ -1,6 +1,7 @@
 #ifndef DATATYPE_H
 #define DATATYPE_H
 //10
+//3
 typedef struct artikl {
 	int id;
 	char ime[20];
