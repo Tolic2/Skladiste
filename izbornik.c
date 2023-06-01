@@ -3,7 +3,7 @@
 #include "functions.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+//8
 int izbornik(const char* const ime) {
 
 	printf("\t\t***************************************\n\n");
