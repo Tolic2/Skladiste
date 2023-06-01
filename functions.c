@@ -4,7 +4,7 @@
 #include<string.h>
 #include "dataType.h"
 
-static int brojArtikala = 0;
+static int brojArtikala = 0;//10
 
 void inicijalizacija(const char* const ime) {
 
@@ -27,7 +27,7 @@ void dodajArtikl(const char* const ime) {
 	FILE* fp = fopen(ime, "rb+");
 
 	if (fp == NULL) {
-		perror("Dodavanje artikala u datoteku artikli.bin");
+		perror("Dodavanje artikala u datoteku artikli.bin");//19
 		exit(EXIT_FAILURE);
 	}
 
@@ -57,7 +57,7 @@ void dodajArtikl(const char* const ime) {
 	scanf("%d", &temp.kolicina);
 	getchar();
 
-	fseek(fp, sizeof(ARTIKL) * brojArtikala, SEEK_CUR);
+	fseek(fp, sizeof(ARTIKL) * brojArtikala, SEEK_CUR);//17
 	fwrite(&temp, sizeof(ARTIKL), 1, fp);
 	printf("Novi artikl dodan\n\n");
 
@@ -72,7 +72,7 @@ void* ucitajArtikl(const char* const ime) {
 	FILE* fp = fopen(ime, "rb");
 
 	if (fp == NULL) {
-		perror("Ucitavanje artikala iz artikli.bin");
+		perror("Ucitavanje artikala iz artikli.bin");//19
 		exit(EXIT_FAILURE);
 	}
 
@@ -127,7 +127,7 @@ void brisanjeArtikala(ARTIKL* const polje, const char* const dat) {
 		}
 	} while (trazeniID < 1 || trazeniID > brojArtikala);
 
-	ARTIKL* poljeArtikala = (ARTIKL*)calloc(brojArtikala - 1, sizeof(ARTIKL));
+	ARTIKL* poljeArtikala = (ARTIKL*)calloc(brojArtikala - 1, sizeof(ARTIKL));//14
 
 	int brojac = 0;
 
@@ -146,7 +146,7 @@ void brisanjeArtikala(ARTIKL* const polje, const char* const dat) {
 
 	}
 
-	free(poljeArtikala);
+	free(poljeArtikala);//15
 	poljeArtikala = NULL;
 
 	rewind(fp);
@@ -160,7 +160,7 @@ void brisanjeArtikala(ARTIKL* const polje, const char* const dat) {
 
 void* sortirajCijenaMax(ARTIKL* polje) {
 	int max = -1;
-
+	//20
 	for (int i = 0; i < brojArtikala - 1; i++) {
 
 		max = i;
@@ -199,7 +199,7 @@ void ispisiSortiranoMax(const ARTIKL* polje) {
 
 void* sortirajCijenaMin(ARTIKL* polje) {
 	int min = -1;
-
+	//20
 	for (int i = 0; i < brojArtikala - 1; i++) {
 
 		min = i;
@@ -254,7 +254,7 @@ void ispisiArtikl(const ARTIKL* const polje) {
 }
 
 void* pretrazivanje(ARTIKL* const polje) {
-
+	//21
 	if (polje == NULL) {
 		printf("Polje artikala je prazno");
 		return NULL;
@@ -280,7 +280,7 @@ int brisanjeDatoteke(char* fp) {
 	
 	int status;
 	
-	status = remove("skladiste.bin");
+	status = remove("skladiste.bin");//18
 
 	if (status == 0) {
 		printf("Datoteka uspjesno obrisana\n");
