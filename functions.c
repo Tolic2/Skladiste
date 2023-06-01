@@ -257,7 +257,7 @@ void* pretrazivanje(ARTIKL* const polje) {
 	//21
 	if (polje == NULL) {
 		printf("Polje artikala je prazno");
-		return NULL;
+		return NULL; //11
 	}
 	int i, trazeniID;
 
